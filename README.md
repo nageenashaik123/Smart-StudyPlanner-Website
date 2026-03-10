@@ -70,20 +70,21 @@ The frontend communicates with the backend through REST APIs to store and retrie
 ---
 
 # 📂 Project Structure
-SmartPlanner
+SmartPlanner/
 │
-├── frontend
-│ ├── dashboard.html
-│ ├── style.css
-│ └── script.js
+├── frontend/
+│   ├── dashboard.html     # Main dashboard UI
+│   ├── style.css          # Styling and layout
+│   └── script.js          # Frontend logic and API calls
 │
-├── backend
-│ ├── server.js
-│ └── models
-│ └── Task.js
+├── backend/
+│   ├── server.js          # Express server and API routes
+│   ├── package.json       # Node dependencies
+│   └── models/
+│       └── Task.js        # MongoDB task schema
 │
-├── package.json
-└── README.md
+├── README.md              # Project documentation
+└── .gitignore             # Git ignore rules
 ---
 
 # ⚙️ Installation & Setup
