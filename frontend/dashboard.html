@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlanner · Minimal Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- sidebar navigation -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>plan</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fa-regular fa-chart-bar"></i>Dashboard</a>
+                <a href="#"><i class="fa-regular fa-list-check"></i>Tasks</a>
+                <a href="#"><i class="fa-regular fa-chart-line"></i>Progress</a>
+            </nav>
+
+            <div class="user-section">
+                <div class="user-avatar">
+                    <span id="userInitial">U</span>
+                </div>
+                <div class="user-info">
+                    <span id="displayName">Loading...</span>
+                    <span class="streak-badge"><i class="fa-regular fa-fire"></i> <span id="streakCount">0</span> day streak</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- main content -->
+        <main class="main-content">
+            <!-- top bar with dynamic greeting -->
+            <div class="top-bar">
+                <div class="greeting">
+                    <h1>Good <span id="greetingTime">afternoon</span>, <span id="greetingName">User</span></h1>
+                    <p id="focusMessage">Here's your task overview</p>
+                </div>
+                <div class="top-actions">
+                    <button class="icon-btn" id="refreshBtn"><i class="fa-regular fa-rotate-right"></i></button>
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                </div>
+            </div>
+
+            <!-- quick add task – compact, elegant -->
+            <div class="quick-add">
+                <div class="input-group">
+                    <input type="text" id="taskSubject" placeholder="Subject (e.g. Math)" class="input-subject">
+                    <input type="text" id="taskDescription" placeholder="Write a task..." class="input-task">
+                    <input type="date" id="taskDeadline" class="input-date" value="">
+                    <button id="addTaskBtn" class="primary-btn"><i class="fa-regular fa-plus"></i> Add</button>
+                </div>
+            </div>
+
+            <!-- stats cards – minimal, clean -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon total"><i class="fa-regular fa-clipboard"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-label">Total tasks</span>
+                        <span class="stat-number" id="totalTasks">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon completed"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-label">Completed</span>
+                        <span class="stat-number" id="completedTasks">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon pending"><i class="fa-regular fa-clock"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-label">Pending</span>
+                        <span class="stat-number" id="pendingTasks">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- progress bar – subtle -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span><i class="fa-regular fa-chart-simple"></i> Today's progress</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                </div>
+                <p class="progress-message" id="progressMessage">Add tasks to get started ✨</p>
+            </div>
+
+            <!-- search and filter bar -->
+            <div class="search-section">
+                <div class="search-wrapper">
+                    <i class="fa-regular fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search by subject or task...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <!-- task grid -->
+            <div id="tasksContainer" class="tasks-grid">
+                <!-- dynamically loaded -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
