@@ -34,16 +34,6 @@ The SmartPlanner dashboard provides:
 ---
 
 # 🏗️ Project Architecture
-Frontend (HTML, CSS, JavaScript)
-│
-│ Fetch API
-▼
-Backend (Node.js + Express)
-│
-▼
-Database (MongoDB Atlas)
-
-The frontend communicates with the backend through REST APIs to store and retrieve tasks.
 
 ---
 
