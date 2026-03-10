@@ -91,7 +91,7 @@ SmartPlanner
 ## 1️⃣ Clone Repository
 
 
-git clone https://github.com/yourusername/smartplanner.git
+git clone https://github.com/nageenashaik123/Smart-Studyplanner-Website
 
 
 ---
